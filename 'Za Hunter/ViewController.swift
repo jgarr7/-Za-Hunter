@@ -11,19 +11,19 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDelegate {
-
+    
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
-        var region = MKCoordinateRegion()
+    var region = MKCoordinateRegion()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         mapView.showsUserLocation = true
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -50,25 +50,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDeleg
                     annotation.title = mapItem.name
                     self.mapView.addAnnotation(annotation)
                 }
-                }
             }
         }
     }
-
-func mapView(_mapView: MKMapView, viewFor annotation: MKAnnotation) ->
-    MKAnnotationView? {
-        if annotation is MKUserLocation{
-            return nil
-        }
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin")
-        if pinView == nil {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pinView")
-            pinView?.canShowCallout = true
-            pinView?.rightCalloutAccessoryView = UIButton(type: .infoLight)
-        } else {
-            pinView?.annotation = annotation
-        }
-        return pinView
+    
+    func mapView(_mapView: MKMapView, viewFor annotation: MKAnnotation) ->
+        MKAnnotationView? {
+            if annotation is MKUserLocation{
+                return nil
+            }
+            var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin")
+            if pinView == nil {
+                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pinView")
+                pinView?.canShowCallout = true
+                pinView?.rightCalloutAccessoryView = UIButton(type: .infoLight)
+            } else {
+                pinView?.annotation = annotation
+            }
+            return pinView
+    }
+    func mapView(_mapView: MKMapView, annotationView view: MKAnnotation, calloutAccesoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: nil)
+    }
+    
 }
-
-
