@@ -11,6 +11,9 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDelegate {
+
+    var mapItems = [MKMapItem]()
+    var selectedMapItem = MKMapItem()     
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
@@ -49,6 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDeleg
                     annotation.coordinate = mapItem.placemark.coordinate
                     annotation.title = mapItem.name
                     self.mapView.addAnnotation(annotation)
+                    self.mapItems.append(mapItem)
                 }
             }
         }
@@ -69,8 +73,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDeleg
             }
             return pinView
     }
-    func mapView(_mapView: MKMapView, annotationView view: MKAnnotation, calloutAccesoryControlTapped control: UIControl) {
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: nil)
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? LocationDetailsViewController {
+            destination.selectedMapItem = selectedMapItem
+        }
+    }
 }
