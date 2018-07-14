@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0784B06D20FAAED700D42D75 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B06C20FAAED700D42D75 /* LocationDetailsViewController.swift */; };
 		A892F1BB20F67E6700EAF9E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A892F1BA20F67E6700EAF9E6 /* AppDelegate.swift */; };
 		A892F1BD20F67E6700EAF9E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A892F1BC20F67E6700EAF9E6 /* ViewController.swift */; };
 		A892F1C020F67E6700EAF9E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A892F1BE20F67E6700EAF9E6 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0784B06C20FAAED700D42D75 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		A892F1B720F67E6700EAF9E6 /* 'Za Hunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "'Za Hunter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A892F1BA20F67E6700EAF9E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A892F1BC20F67E6700EAF9E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				A892F1BA20F67E6700EAF9E6 /* AppDelegate.swift */,
 				A892F1BC20F67E6700EAF9E6 /* ViewController.swift */,
 				A892F1BE20F67E6700EAF9E6 /* Main.storyboard */,
+				0784B06C20FAAED700D42D75 /* LocationDetailsViewController.swift */,
 				A892F1C120F67E6700EAF9E6 /* Assets.xcassets */,
 				A892F1C320F67E6700EAF9E6 /* LaunchScreen.storyboard */,
 				A892F1C620F67E6700EAF9E6 /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0784B06D20FAAED700D42D75 /* LocationDetailsViewController.swift in Sources */,
 				A892F1BD20F67E6700EAF9E6 /* ViewController.swift in Sources */,
 				A892F1BB20F67E6700EAF9E6 /* AppDelegate.swift in Sources */,
 			);
